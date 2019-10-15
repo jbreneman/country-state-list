@@ -1,6 +1,6 @@
 const fs = require('fs');
 const countries = require('countryjs');
-const all = countries.all().filter(item => ['Wales'].includes(item.name)); // Ignore, same country code
+const all = countries.all().filter(item => !['Wales'].includes(item.name)); // Ignore, same country code
 
 // Create individual json file per country
 all.forEach((country) => {
