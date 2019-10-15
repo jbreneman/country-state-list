@@ -1,6 +1,6 @@
 {
   "name": "@jbreneman/country-state-list",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A package optimized for bundle splitting country/state data",
   "main": "dist/index.js",
   "scripts": {
