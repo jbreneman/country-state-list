@@ -14,7 +14,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var getCountry = function getCountry(countryCode) {
   var required = require("./".concat(countryCode.toUpperCase(), ".json"));
 
-  return JSON.parse(required);
+  return typeof required === 'string' ? JSON.parse(required) : required;
 };
 /**
  * Gets a list of countries with state data

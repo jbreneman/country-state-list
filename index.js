@@ -5,7 +5,7 @@
  */
 const getCountry = (countryCode) => {
     const required = require(`./${countryCode.toUpperCase()}.json`);
-    return JSON.parse(required);
+    return typeof required === 'string' ? JSON.parse(required) : required;
 }
 
 /**
