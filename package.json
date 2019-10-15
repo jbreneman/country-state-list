@@ -1,0 +1,20 @@
+{
+  "name": "country-state",
+  "version": "1.0.0",
+  "description": "A package optimized for bundle splitting country/state data",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "node scripts/build.js && babel index.js -d dist"
+  },
+  "author": "Jesse Breneman",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "7.6.4",
+    "@babel/core": "7.6.4",
+    "@babel/plugin-proposal-object-rest-spread": "7.6.2",
+    "@babel/preset-env": "7.6.3",
+    "countryjs": "1.8.0"
+  }
+}
