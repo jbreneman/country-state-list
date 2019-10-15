@@ -4,7 +4,7 @@
  * @param {string} countryCode - The 2 or 3 letter country code
  */
 const getCountry = (countryCode) => {
-    const required = require(`./dist/${countryCode.toUpperCase()}.json`);
+    const required = require(`./${countryCode.toUpperCase()}.json`);
     return JSON.parse(required);
 }
 
@@ -14,7 +14,7 @@ const getCountry = (countryCode) => {
  * @param {string[]} filter - An array of country codes (2 letter preferred, falls back to 3 letter)
  */
 const getCountries = (filter) => {
-    const list = filter ? filter : JSON.parse(require('./dist/countries.json')).map(item => item.code);
+    const list = filter ? filter : JSON.parse(require('./countries.json')).map(item => item.code);
     return list.map(item => {
         return {
             ...getCountry(item),

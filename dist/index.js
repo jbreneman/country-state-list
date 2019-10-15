@@ -12,7 +12,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
  * @param {string} countryCode - The 2 or 3 letter country code
  */
 var getCountry = function getCountry(countryCode) {
-  var required = require("./dist/".concat(countryCode.toUpperCase(), ".json"));
+  var required = require("./".concat(countryCode.toUpperCase(), ".json"));
 
   return JSON.parse(required);
 };
@@ -24,7 +24,7 @@ var getCountry = function getCountry(countryCode) {
 
 
 var getCountries = function getCountries(filter) {
-  var list = filter ? filter : JSON.parse(require('./dist/countries.json')).map(function (item) {
+  var list = filter ? filter : JSON.parse(require('./countries.json')).map(function (item) {
     return item.code;
   });
   return list.map(function (item) {
