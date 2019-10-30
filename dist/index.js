@@ -24,9 +24,11 @@ var getCountry = function getCountry(countryCode) {
 
 
 var getCountries = function getCountries(filter) {
-  var list = filter ? filter : JSON.parse(require('./countries.json')).map(function (item) {
+  var list = filter ? filter : require('./countries.json').map(function (item) {
     return item.code;
-  });
+  }).filter(function (item) {
+    return item.length;
+  }).sort();
   return list.map(function (item) {
     return _objectSpread({}, getCountry(item), {
       code: item.toUpperCase()

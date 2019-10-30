@@ -14,7 +14,7 @@ const getCountry = (countryCode) => {
  * @param {string[]} filter - An array of country codes (2 letter preferred, falls back to 3 letter)
  */
 const getCountries = (filter) => {
-    const list = filter ? filter : JSON.parse(require('./countries.json')).map(item => item.code);
+    const list = filter ? filter : require('./countries.json').map(item => item.code).filter(item => item.length).sort();
     return list.map(item => {
         return {
             ...getCountry(item),
